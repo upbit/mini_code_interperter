@@ -1,0 +1,20 @@
+# pyyaml
+# python-dotenv>=1.0.0
+# click
+# urllib3
+# requests
+
+pandas>=2.0.0
+cycler
+xlrd
+numpy
+
+# matplotlib
+# seaborn
+# scikit-learn
+
+# Code Execution related
+
+ipykernel==6.26.0
+
+# openai

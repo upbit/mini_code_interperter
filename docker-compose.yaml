@@ -1,0 +1,19 @@
+services:
+  code_executor:
+    image: upbit/code_executor
+    build:
+      dockerfile: docker/Dockerfile
+      context: ./
+    environment:
+      SESSION_ID: "session_id"
+      KERNEL_ID: "kernel_id"
+      CONNECTION_FILE: "/app/conn/conn-session_id-kernel_id.json"
+      KERNEL_IP: "0.0.0.0"
+      KERNEL_PORT_START: "11111"
+      KERNEL_CWD: "/app/cwd"
+      LOGGING_FILE_PATH: "/app/conn/kernel_runtime.log"
+    ports:
+      - '11111-11115:11111-11115/tcp'
+    volumes:
+      - ./data/conn:/app/conn
+      - ./data/cwd:/app/cwd
